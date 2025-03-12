@@ -1,4 +1,5 @@
 // vim: set ft=dts:
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -12,91 +13,66 @@
 #define FUN 5
 #define SYM 6
 #define NAV 7
-
 #define SCNSHT  LG(LS(S))
 #define TSK_MGR LC(LS(ESC))
 
 / {
+    macros {
+    };
+
+    behaviors {
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
             label = "BAS";
             bindings = <
-                &kp Q &kp W  &kp E       &kp R     &kp T   /* */ &kp Y   &kp U    &kp I         &kp O   &kp P
-                &kp A &kp S  &kp D       &kp F     &kp G   /* */ &kp H   &kp J    &kp K         &kp L   &kp SEMI
-                &kp Z &kp X  &kp C       &kp V     &kp B   /* */ &kp N   &kp M    &kp COMMA     &kp DOT &kp SLASH
-                             &et_l FUN 0 &kp SPACE &sl NUM /* */ &sl SYM &kp BSPC &lt NAV ENTER
-            >;
-        };
-
-        game1_layer {
-            label = "GA1";
-            bindings = <
-                &kp Q     &kp W     &kp E       &kp R  &kp T   /* */ &kp Y  &kp U  &kp I     &kp O     &kp P
-                &kp A     &kp S     &kp D       &kp F  &kp G   /* */ &kp H  &kp J  &kp K     &kp L     &kp SEMI
-                &kp Z     &kp X     &kp C       &kp V  &kp B   /* */ &kp N  &kp M  &kp COMMA &kp DOT   &kp SLASH
-                                    &et_l GA3 0 &trans &sl GA2 /* */ &trans &trans &trans
-            >;
-        };
-
-        game2_layer {
-            label = "GA2";
-            bindings = <
-                &kp LCTL &kp N1 &trans    &kp N2 &kp N0  /* */ &trans &trans &trans &trans &trans
-                &kp LSFT &trans &trans    &trans &kp N3  /* */ &trans &trans &trans &trans &trans
-                &kp LALT &kp N5 &kp GRAVE &kp N4 &kp TAB /* */ &trans &trans &trans &trans &trans
-                                &tg_game  &trans &sl GA3 /* */ &trans &trans &trans
-            >;
-        };
-
-        game3_layer {
-            label = "GA3";
-            bindings = <
-                &trans &trans       &trans   &trans      &trans  /* */ &trans &kp PSCRN  &trans &trans &trans
-                &trans &kp LS(F2)   &trans   &kp F2      &trans  /* */ &trans &f1_       &f5_   &f9_   &trans
-                &trans &kp LA(HOME) &kp LGUI &kp LA(END) &trans  /* */ &trans &kp SCNSHT &trans &trans &trans
-                                    &trans   &trans      &sl NUM /* */ &trans &trans     &trans
+&mt TAB Q    &kp W           &mt LG(SPACE) D  &kp F                  &kp K               &kp J                        &kp U        &kp R      &kp L    &kp SEMI
+&kp A        &lt 2 S         &kp E            &lt 4 T                &kp G               &kp Y                        &lt 1 N      &kp I      &kp O    &kp H
+&mt LCTRL Z  &mt LEFT_ALT X  &kp C            &kp V                  &mt LEFT_GUI B      &kp P                        &kp M        &kp COMMA  &kp DOT  &mt SLASH SQT
+                             &none            &mt LEFT_SHIFT ESCAPE  &mt LEFT_GUI ENTER  &mt LA(BACKSPACE) BACKSPACE  &lt 3 SPACE  &none
             >;
         };
 
         number_layer {
             label = "NUM";
             bindings = <
-                &kp N6 &kp N7 &kp N8   &kp N9  &kp N0  /* */ &kp KP_PLUS &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY
-                &kp N1 &kp N2 &kp N3   &kp N4  &kp N5  /* */ &kp EQUAL   &kp N4 &kp N5 &kp N6 &kp DOT
-                &trans &trans &trans   &kp N0  &trans  /* */ &kp MINUS   &kp N1 &kp N2 &kp N3 &kp SLASH
-                              &tg_game &kp DEL &sl FUN /* */ &sl SYM     &kp N0 &trans
+&kp COMMA         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH   &kp KP_PLUS  &none   &kp NON_US_BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp COLON         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD  &none        &none   &kp PLUS              &kp ASTERISK          &kp MINUS
+&kp LEFT_CONTROL  &kp N7        &kp N8        &kp N9        &kp N0      &kp MINUS    &kp N1  &kp N2                &kp N3                &kp EQUAL
+                                &tg_game      &kp DEL       &sl 2       &sl 3        &kp N0  &trans
             >;
         };
 
         function_layer {
             label = "FUN";
             bindings = <
-                &trans &trans &trans &trans &trans  /* */ &kp C_MUTE &kp PSCRN  &kp PAUSE_BREAK &kp KP_NUMLOCK &kp C_VOL_UP
-                &trans &trans &trans &trans &trans  /* */ &bt_sel    &f1_       &f5_            &f9_           &media
-                &trans &trans &trans &trans &trans  /* */ &bt_clr    &kp SCNSHT &kp LG(L)       &kp TSK_MGR    &kp C_VOL_DN
-                              &trans &trans &sl SYM /* */ &sl SYM    &output    &trans
+&trans  &trans  &trans  &trans  &trans  &kp C_MUTE  &kp PSCRN   &kp PAUSE_BREAK  &kp KP_NUMLOCK  &kp C_VOL_UP
+&trans  &trans  &trans  &trans  &trans  &bt_sel     &f1_        &f5_             &f9_            &media
+&trans  &trans  &trans  &trans  &trans  &bt_clr     &kp SCNSHT  &kp LG(L)        &kp TSK_MGR     &kp C_VOL_DN
+                &trans  &trans  &trans  &trans      &output     &trans
             >;
         };
 
         symbol_layer {
             label = "SYM";
             bindings = <
-                &kp BACKSLASH &kp SQT   &kp LBKT &kp RBKT &trans    /* */ &trans  &trans  &trans &trans &trans
-                &kp GRAVE     &kp UNDER &kp LPAR &kp RPAR &kp TILDE /* */ &trans  &trans  &trans &trans &trans
-                &kp PIPE      &kp DQT   &kp LBRC &kp RBRC &trans    /* */ &trans  &trans  &trans &trans &trans
-                                        &trans   &trans   &sl NUM   /* */ &sl NAV &kp TAB &trans
+&kp SQT       &kp HASH   &kp NON_US_BACKSLASH  &kp SLASH        &kp PIPE2         &kp AT_SIGN     &kp DOUBLE_QUOTES  &kp LEFT_BRACKET                 &kp RIGHT_BRACKET                  &kp PIPE
+&kp ASTERISK  &kp EQUAL  &kp PLUS              &kp EXCLAMATION  &kp GRAVE         &kp MINUS       &kp QUESTION       &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &kp AMPERSAND
+&kp PIPE      &kp CARET  &kp LBRC              &kp DOLLAR       &kp LA(NUMBER_2)  &kp UNDERSCORE  &kp COLON          &kp LESS_THAN                    &kp GREATER_THAN                   &kp PERCENT
+                         &trans                &trans           &trans            &trans          &trans             &trans
             >;
         };
 
         navigation_layer {
             label = "NAV";
             bindings = <
-                &kp INS &kp HOME &kp UP   &kp END   &trans    /* */ &trans   &trans   &trans &trans    &trans
-                &kp TAB &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP /* */ &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
-                &kp DEL &trans   &trans   &trans    &kp PG_DN /* */ &trans   &trans   &trans &trans    &trans
-                                 &trans   &trans    &sl NUM   /* */ &sl NUM  &trans   &trans
+&kp INS  &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LEFT_BRACKET)  &trans         &trans             &trans    &trans  &trans               &trans
+&kp TAB  &hx_left         &hx_right    &none                 &none          &mt LA(LEFT) LEFT  &kp DOWN  &kp UP  &mt LA(RIGHT) RIGHT  &trans
+&kp DEL  &kp LG(LS(TAB))  &kp LG(TAB)  &trans                &kp PG_DN      &trans             &trans    &trans  &trans               &trans
+                          &trans       &kp LC(LEFT_ARROW)    &kp LC(RIGHT)  &trans             &trans    &trans
             >;
         };
     };
@@ -114,15 +90,16 @@
         compatible = "zmk,combos";
 
         #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, LAYERS) \
-            combo_##NAME { \
-                timeout-ms = <TIMEOUT>; \
-                bindings = <BINDINGS>; \
-                key-positions = <KEYPOS>; \
-                layers = <LAYERS>; \
-                slow-release; \
-            };
+            combo_##NAME {
 
-        #define DEFAULT_TIME 64
+        timeout-ms = <TIMEOUT>;
+        bindings = <BINDINGS>;
+        key-positions = <KEYPOS>;
+        layers = <LAYERS>;
+        slow-release;
+    };
+
+    #define DEFAULT_TIME 64
         #define LONG_TIME    128
 
         #define ALL_LAYERS     BAS GA1 GA2 GA3 NUM FUN SYM NAV NUM NAV
@@ -148,135 +125,219 @@
         COMBO(num_bspc  , &kp BSPC  , 6  16, DEFAULT_TIME, NUM           )
         COMBO(num_comma , &kp COMMA , 7  17, DEFAULT_TIME, NUM           )
         COMBO(num_space , &kp SPACE , 8  18, DEFAULT_TIME, NUM           )
+};
+
+behaviors {
+    bt_sel: tap_dance_bluetooth_select {
+        compatible = "zmk,behavior-tap-dance";
+        label = "BLUETOOTH_SELECT";
+        #binding-cells = <0>;
+        tapping-term-ms = <256>;
+        bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>, <&bt BT_SEL 2>;
     };
 
-    behaviors {
-        bt_sel: tap_dance_bluetooth_select {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH_SELECT";
-            #binding-cells = <0>;
-            tapping-term-ms = <256>;
-            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>, <&bt BT_SEL 2>;
-        };
-
-        bt_clr: tap_dance_bluetooth_clear {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH_CLEAR";
-            #binding-cells = <0>;
-            tapping-term-ms = <256>;
-            bindings = <&trans>, <&bt BT_CLR>;
-        };
-
-        tg_game: tg_game {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TOGGLE_GAME";
-            #binding-cells = <0>;
-            tapping-term-ms = <512>;
-            bindings = <&to BAS>, <&to GA1>;
-        };
-
-        n0_: tap_dance_n0_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_N0_N9";
-            #binding-cells = <0>;
-            tapping-term-ms = <512>;
-            bindings = <&kp N0>, <&kp N1>, <&kp N2>, <&kp N3>, <&kp N4>,
-                       <&kp N5>, <&kp N6>, <&kp N7>, <&kp N8>, <&kp N9>;
-        };
-
-        f1_: tap_dance_f1_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_F1_F24";
-            #binding-cells = <0>;
-            tapping-term-ms = <512>;
-            bindings = <&kp F1>, <&kp F2>, <&kp F3>, <&kp F4>,
-                       <&kp F5>, <&kp F6>, <&kp F7>, <&kp F8>,
-                       <&kp F9>, <&kp F10>, <&kp F11>, <&kp F12>,
-                       <&kp F13>, <&kp F14>, <&kp F15>, <&kp F16>,
-                       <&kp F17>, <&kp F18>, <&kp F19>, <&kp F20>,
-                       <&kp F22>, <&kp F23>, <&kp F24>;
-        };
-
-        f5_: tap_dance_f5_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_F5_F24";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp F5>, <&kp F6>, <&kp F7>, <&kp F8>,
-                       <&kp F9>, <&kp F10>, <&kp F11>, <&kp F12>,
-                       <&kp F13>, <&kp F14>, <&kp F15>, <&kp F16>,
-                       <&kp F17>, <&kp F18>, <&kp F19>, <&kp F20>,
-                       <&kp F22>, <&kp F23>, <&kp F24>;
-        };
-
-        f9_: tap_dance_f9_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_F9_F24";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp F9>, <&kp F10>, <&kp F11>, <&kp F12>,
-                       <&kp F13>, <&kp F14>, <&kp F15>, <&kp F16>,
-                       <&kp F17>, <&kp F18>, <&kp F19>, <&kp F20>,
-                       <&kp F22>, <&kp F23>, <&kp F24>;
-        };
-
-        media: tap_dance_media {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MEDIA";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
-        };
-
-        output: tap_output {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_OUTPUT";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&out OUT_USB>, <&out OUT_BLE>;
-        };
-
-        esc_tab: mod_morph_esc_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ESC_TAB";
-            #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp TAB>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        et_l: esc_tab_layer_x {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ESC_TAB_LAYER";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            bindings = <&mo>, <&esc_tab>;
-        };
+    bt_clr: tap_dance_bluetooth_clear {
+        compatible = "zmk,behavior-tap-dance";
+        label = "BLUETOOTH_CLEAR";
+        #binding-cells = <0>;
+        tapping-term-ms = <256>;
+        bindings = <&trans>, <&bt BT_CLR>;
     };
 
-    macros {
-        // No way to cancel sticky keys so using F24 as a NOOP proxy
-        // Bailing out of any sticky keyboard state macro
-        bail: macro_bail {
-            label = "MACRO_BAIL";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp F24 &to BAS>;
-        };
+    tg_game: tg_game {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TOGGLE_GAME";
+        #binding-cells = <0>;
+        tapping-term-ms = <512>;
+        bindings = <&to 0>, <&to 0>;
+    };
 
-        noop: macro_noop {
-            label = "MACRO_NOOP";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp F24>;
-        };
+    n0_: tap_dance_n0_ {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_N0_N9";
+        #binding-cells = <0>;
+        tapping-term-ms = <512>;
+        bindings =
+            <&kp N0>,
+            <&kp N1>,
+            <&kp N2>,
+            <&kp N3>,
+            <&kp N4>,
+            <&kp N5>,
+            <&kp N6>,
+            <&kp N7>,
+            <&kp N8>,
+            <&kp N9>;
+    };
+
+    f1_: tap_dance_f1_ {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_F1_F24";
+        #binding-cells = <0>;
+        tapping-term-ms = <512>;
+        bindings =
+            <&kp F1>,
+            <&kp F2>,
+            <&kp F3>,
+            <&kp F4>,
+            <&kp F5>,
+            <&kp F6>,
+            <&kp F7>,
+            <&kp F8>,
+            <&kp F9>,
+            <&kp F10>,
+            <&kp F11>,
+            <&kp F12>,
+            <&kp F13>,
+            <&kp F14>,
+            <&kp F15>,
+            <&kp F16>,
+            <&kp F17>,
+            <&kp F18>,
+            <&kp F19>,
+            <&kp F20>,
+            <&kp F22>,
+            <&kp F23>,
+            <&kp F24>;
+    };
+
+    f5_: tap_dance_f5_ {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_F5_F24";
+        #binding-cells = <0>;
+        tapping-term-ms = <300>;
+        bindings =
+            <&kp F5>,
+            <&kp F6>,
+            <&kp F7>,
+            <&kp F8>,
+            <&kp F9>,
+            <&kp F10>,
+            <&kp F11>,
+            <&kp F12>,
+            <&kp F13>,
+            <&kp F14>,
+            <&kp F15>,
+            <&kp F16>,
+            <&kp F17>,
+            <&kp F18>,
+            <&kp F19>,
+            <&kp F20>,
+            <&kp F22>,
+            <&kp F23>,
+            <&kp F24>;
+    };
+
+    f9_: tap_dance_f9_ {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_F9_F24";
+        #binding-cells = <0>;
+        tapping-term-ms = <300>;
+        bindings =
+            <&kp F9>,
+            <&kp F10>,
+            <&kp F11>,
+            <&kp F12>,
+            <&kp F13>,
+            <&kp F14>,
+            <&kp F15>,
+            <&kp F16>,
+            <&kp F17>,
+            <&kp F18>,
+            <&kp F19>,
+            <&kp F20>,
+            <&kp F22>,
+            <&kp F23>,
+            <&kp F24>;
+    };
+
+    media: tap_dance_media {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_MEDIA";
+        #binding-cells = <0>;
+        tapping-term-ms = <300>;
+        bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
+    };
+
+    output: tap_output {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_OUTPUT";
+        #binding-cells = <0>;
+        tapping-term-ms = <300>;
+        bindings = <&out OUT_USB>, <&out OUT_BLE>;
+    };
+
+    esc_tab: mod_morph_esc_tab {
+        compatible = "zmk,behavior-mod-morph";
+        label = "ESC_TAB";
+        #binding-cells = <0>;
+        bindings = <&kp ESC>, <&kp TAB>;
+
+        mods = <(MOD_LALT|MOD_RALT)>;
+        keep-mods = <(MOD_LALT|MOD_RALT)>;
+    };
+
+    et_l: esc_tab_layer_x {
+        compatible = "zmk,behavior-hold-tap";
+        label = "ESC_TAB_LAYER";
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <250>;
+        bindings = <&mo>, <&esc_tab>;
     };
 };
 
-&sl { release-after-ms = <800>; no-sticky-after-hold-ms = <400>; };
-&sk { release-after-ms = <800>; no-sticky-after-hold-ms = <400>; quick-release; };
-&lt { flavor = "balanced"; tapping-term-ms = <222>; };
+macros {
+    // No way to cancel sticky keys so using F24 as a NOOP proxy
+    // Bailing out of any sticky keyboard state macro
+
+    bail: macro_bail {
+        label = "MACRO_BAIL";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap>, <&kp F24 &to 0>;
+    };
+
+    noop: macro_noop {
+        label = "MACRO_NOOP";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap>, <&kp F24>;
+    };
+
+    hx_left: hx_left {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp LEFT_BRACKET &kp LEFT_BRACKET>;
+        label = "HX_LEFT";
+    };
+
+    hx_right: hx_right {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp RIGHT_BRACKET &kp RIGHT_BRACKET>;
+        label = "HX_RIGHT";
+    };
+};
+
+};
+
+&sl {
+    release-after-ms = <800>;
+    no-sticky-after-hold-ms = <400>;
+};
+
+&sk {
+    release-after-ms = <800>;
+    no-sticky-after-hold-ms = <400>;
+    quick-release;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <222>;
+};
+
 &caps_word { continue-list = <UNDERSCORE MINUS BSPC>; };
 
 // Empty keymap
