@@ -17,9 +17,6 @@
 #define TSK_MGR LC(LS(ESC))
 
 / {
-    macros {
-    };
-
     behaviors {
     };
 
