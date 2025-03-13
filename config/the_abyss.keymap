@@ -17,12 +17,6 @@
 #define TSK_MGR LC(LS(ESC))
 
 / {
-    behaviors {
-    };
-
-    macros {
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -90,16 +84,15 @@
         compatible = "zmk,combos";
 
         #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, LAYERS) \
-            combo_##NAME {
+            combo_##NAME { \
+                timeout-ms = <TIMEOUT>; \
+                bindings = <BINDINGS>; \
+                key-positions = <KEYPOS>; \
+                layers = <LAYERS>; \
+                slow-release; \
+            };
 
-        timeout-ms = <TIMEOUT>;
-        bindings = <BINDINGS>;
-        key-positions = <KEYPOS>;
-        layers = <LAYERS>;
-        slow-release;
-    };
-
-    #define DEFAULT_TIME 64
+        #define DEFAULT_TIME 64
         #define LONG_TIME    128
 
         #define ALL_LAYERS     BAS GA1 GA2 GA3 NUM FUN SYM NAV NUM NAV
