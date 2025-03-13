@@ -335,7 +335,7 @@ macros {
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <500>;
+    tapping-term-ms = <400>;
     quick-tap-ms = <0>;
 };
 
