@@ -341,8 +341,8 @@ macros {
 &caps_word { continue-list = <UNDERSCORE MINUS BSPC>; };
 
 &mt {
-    tapping-term-ms = <400>;
-    quick-tap-ms = <400>;
+    tapping-term-ms = <300>;
+    quick-tap-ms = <0>;
 };
 
 // Empty keymap
