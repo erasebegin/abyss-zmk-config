@@ -321,8 +321,8 @@ macros {
 };
 
 &sk {
-    release-after-ms = <800>;
-    no-sticky-after-hold-ms = <400>;
+    release-after-ms = <500>;
+    no-sticky-after-hold-ms = <300>;
     quick-release;
 };
 
@@ -334,9 +334,8 @@ macros {
 &caps_word { continue-list = <UNDERSCORE MINUS BSPC>; };
 
 &mt {
-    tapping-term-ms = <300>;
+    tapping-term-ms = <400>;
     quick-tap-ms = <0>;
-    global-quick-tap = <0>;  
 };
 
 // Empty keymap
