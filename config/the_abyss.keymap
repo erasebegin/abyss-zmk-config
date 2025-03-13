@@ -334,7 +334,8 @@ macros {
 &caps_word { continue-list = <UNDERSCORE MINUS BSPC>; };
 
 &mt {
-    tapping-term-ms = <400>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <800>;
     quick-tap-ms = <0>;
 };
 
