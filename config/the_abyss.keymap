@@ -336,6 +336,7 @@ macros {
 &mt {
     tapping-term-ms = <300>;
     quick-tap-ms = <0>;
+    global-quick-tap = <0>;  
 };
 
 // Empty keymap
