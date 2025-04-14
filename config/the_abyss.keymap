@@ -43,17 +43,17 @@
         function_layer {
             label = "FUN";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp C_MUTE  &kp PSCRN   &kp PAUSE_BREAK  &kp KP_NUMLOCK  &kp C_VOL_UP
-&trans  &trans  &kp LG(LA(I))  &kp SCNSHT  &trans  &bt_sel     &f1_        &f5_             &f9_            &media
-&trans  &trans  &trans  &trans  &trans  &bt_clr     &kp SCNSHT  &kp LG(L)        &kp TSK_MGR     &kp C_VOL_DN
-                &trans  &trans  &trans  &trans      &output     &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &out OUT_TOG  &kp C_MUTE  &kp PSCRN   &kp PAUSE_BREAK  &kp KP_NUMLOCK  &kp C_VOL_UP
+&trans        &trans        &kp LG(LA(I))  &kp SCNSHT  &trans        &bt_sel     &f1_        &f5_             &f9_            &media
+&trans        &trans        &trans        &trans       &trans        &bt_clr     &kp SCNSHT  &kp LG(L)        &kp TSK_MGR     &kp C_VOL_DN
+                            &trans        &trans       &trans        &trans      &output     &trans
             >;
         };
 
         symbol_layer {
             label = "SYM";
             bindings = <
-&kp SQT       &kp POUND   &kp GRAVE              &kp SLASH        &kp PIPE2         &kp AT_SIGN     &kp DOUBLE_QUOTES  &kp LEFT_BRACKET                 &kp RIGHT_BRACKET                  &kp PIPE
+&kp SQT       &kp LA(N3)  &kp BACKSLASH          &kp SLASH        &kp PIPE2         &kp AT_SIGN     &kp DOUBLE_QUOTES  &kp LEFT_BRACKET                 &kp RIGHT_BRACKET                  &kp PIPE
 &kp ASTERISK  &kp EQUAL  &kp PLUS              &kp EXCLAMATION  &kp NON_US_BACKSLASH  &kp MINUS       &kp QUESTION       &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &kp AMPERSAND
 &kp SEMI      &kp CARET  &kp LBRC              &kp DOLLAR       &kp LA(NUMBER_2)  &kp UNDERSCORE  &kp COLON          &kp LESS_THAN                    &kp GREATER_THAN                   &kp PERCENT
                          &trans                &trans           &trans            &trans          &trans             &trans
