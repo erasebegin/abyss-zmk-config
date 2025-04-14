@@ -1,0 +1,53 @@
+# ZMK specific build artifacts
+/build*/
+/zephyr/
+/modules/
+/tools/
+/.west/
+/bootloader/
+
+# Generated files
+/generated/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+
+# VSCode files
+.vscode/
+*.code-workspace
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Temporary files
+*~
+\#*\#
+*.swp
+*.swo
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# Ninja
+.ninja_deps
+.ninja_log
+
+# Editors
+.idea/
+*.sublime-project
+*.sublime-workspace
