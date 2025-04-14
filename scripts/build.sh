@@ -43,11 +43,11 @@ else
                             exit 1
         esac
         shift
-    fi
+    done
 fi
 
 # Set directory paths
-script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+script_dir="$(cd "$(dirname "$0")" && pwd)"
 repo_dir="$(dirname "$script_dir")"
 left_build_dir="$repo_dir/build/left"
 right_build_dir="$repo_dir/build/right"

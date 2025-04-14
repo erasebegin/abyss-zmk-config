@@ -6,9 +6,18 @@ This repository contains the ZMK configuration for The Abyss keyboard.
 
 To set up the ZMK development environment locally:
 
+### Bash/Zsh Shell
+
 ```bash
 chmod +x scripts/setup.sh scripts/build.sh
 ./scripts/setup.sh
+```
+
+### Fish Shell
+
+```fish
+chmod +x scripts/fish_setup.sh scripts/fish_build.sh
+./scripts/fish_setup.sh
 ```
 
 This script will:
@@ -20,6 +29,8 @@ This script will:
 ## Building Firmware
 
 To build the firmware locally, use the build script:
+
+### Bash/Zsh Shell
 
 ```bash
 # Build both halves
@@ -33,6 +44,22 @@ To build the firmware locally, use the build script:
 
 # Clean build and rebuild both halves
 ./scripts/build.sh --clean --all
+```
+
+### Fish Shell
+
+```fish
+# Build both halves
+./scripts/fish_build.sh
+
+# Build only left half
+./scripts/fish_build.sh --left
+
+# Build only right half
+./scripts/fish_build.sh --right
+
+# Clean build and rebuild both halves
+./scripts/fish_build.sh --clean --all
 ```
 
 The generated firmware files will be located at:
