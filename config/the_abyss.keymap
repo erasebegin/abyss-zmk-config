@@ -23,7 +23,7 @@
         base_layer {
             label = "BAS";
             bindings = <
-&mt TAB Q    &kp W           &mt LG(SPACE) D  &kp F                  &kp K               &kp J                        &kp U        &kp R      &kp L    &kp SEMI
+&mt TAB Q    &kp W           &mt LG(SPACE) D  &kp F                  &kp K               &kp J                        &kp U        &kp R      &kp L    &mt LS(TAB) TAB
 &kp A        &lt 2 S         &kp E            &lt 4 T                &kp G               &kp Y                        &lt 1 N      &kp I      &kp O    &kp H
 &mt LCTRL Z  &mt LEFT_ALT X  &kp C            &kp V                  &mt LEFT_GUI B      &kp P                        &kp M        &kp COMMA  &kp DOT  &mt SLASH SQT
                              &none            &mt LEFT_SHIFT ESCAPE  &mt LEFT_GUI ENTER  &mt LA(BACKSPACE) BACKSPACE  &lt 3 SPACE  &none
@@ -53,9 +53,9 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-&kp SQT       &kp HASH   &kp NON_US_BACKSLASH  &kp SLASH        &kp PIPE2         &kp AT_SIGN     &kp DOUBLE_QUOTES  &kp LEFT_BRACKET                 &kp RIGHT_BRACKET                  &kp PIPE
-&kp ASTERISK  &kp EQUAL  &kp PLUS              &kp EXCLAMATION  &kp GRAVE         &kp MINUS       &kp QUESTION       &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &kp AMPERSAND
-&kp PIPE      &kp CARET  &kp LBRC              &kp DOLLAR       &kp LA(NUMBER_2)  &kp UNDERSCORE  &kp COLON          &kp LESS_THAN                    &kp GREATER_THAN                   &kp PERCENT
+&kp SQT       &kp POUND   &kp GRAVE              &kp SLASH        &kp PIPE2         &kp AT_SIGN     &kp DOUBLE_QUOTES  &kp LEFT_BRACKET                 &kp RIGHT_BRACKET                  &kp PIPE
+&kp ASTERISK  &kp EQUAL  &kp PLUS              &kp EXCLAMATION  &kp NON_US_BACKSLASH  &kp MINUS       &kp QUESTION       &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &kp AMPERSAND
+&kp SEMI      &kp CARET  &kp LBRC              &kp DOLLAR       &kp LA(NUMBER_2)  &kp UNDERSCORE  &kp COLON          &kp LESS_THAN                    &kp GREATER_THAN                   &kp PERCENT
                          &trans                &trans           &trans            &trans          &trans             &trans
             >;
         };
